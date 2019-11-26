@@ -1,1 +1,12 @@
 % !TeX root = ./TMA02.tex
+\def\osx[#1]{{\L\frac{1}{\sqrt{2}}\cosh {#1}\R}}%
+Substituting into \eqref{eq:1.1} for $u=\cosh x$ gives,
+\begin{equation}
+\label{eq:1.2}
+	y(x) = c_1\cos\osx[x] + c_2\sin\osx[x],
+\end{equation}
+Now, when $x=1$, $y=0$ and when $x=2$, $y=2$. Substituting  these boundary conditions into the above expression for $y$ gives the following pair of simultaneous equations,
+\begin{align*}
+	0 =& c_1\cos\osx[1] + c_2\sin\osx[1],\quad\textrm{and}\\
+	2 =& c_1\cos\osx[2] + c_2\sin\osx[2].
+\end{align*}
