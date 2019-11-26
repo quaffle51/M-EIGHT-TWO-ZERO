@@ -1,1 +1,44 @@
 % !TeX root = ./TMA02.tex
+The given functional from part (a) is
+\[
+	S[y] = \int_a^b \dd x\left(y^2\sinh x -\frac{2y^{\prime 2}}{\sinh x}\right),\quad y(a) = A,\quad y(b) = B,\quad 0< a < b,
+\]
+In the functional the term $y^\prime$, which is a function of the independent variable $x$, needs to be changed to a function of $u$ which is in turn a function of $x$. Thus, letting the variable $u$ be a function of $x$, i.e. $u=u(x)$, then, using the chain rule to change the independent variable from $x$ to $u$ of $y^\prime(u)$ gives the following expression for $y^\prime$
+\[
+	y^\prime = \deriv{y}{x} = \deriv{y}{u}\cdot\deriv{u}{x}.
+\]
+So, if $y^\prime$ in the functional is replaced for the expression above, 
+\begin{equation*}
+\begin{split}
+	S[y] =& \int_{x_1=a}^{x_2=b}\deriv{x}{u}\dd u\left(y^2\sinh x-\frac{2}{\sinh x}\left(\deriv{y}{u}\right)^2\left(\deriv{u}{x}\right)^2\right),\\
+	S[y] =& \int_{x_1=a}^{x_2=b}\deriv{x}{u}\dd u\left(y^2\sinh x-\frac{2}{\sinh x}\left(\deriv{y}{u}\right)^2\left(\deriv{u}{x}\cdot\deriv{u}{x}\right)\right),\\
+	S[y] =& \int_{u_1}^{u_2}\dd u\left(y^2\sinh x-\frac{2}{\sinh x}\left(\deriv{y}{u}\right)^2\left(\deriv{u}{x}\cdot\deriv{u}{x}\right)\deriv{x}{u}\right),\\
+	S[y] =& \int_{u_1}^{u_2}\dd u\left(y^2\sinh x-\frac{2}{\sinh x}\left(\deriv{y}{u}\right)^2\deriv{u}{x}\right),\\
+	S[y] =& \int_{u_{(a)}}^{u_{(b)}}\dd u\left(y^2\sinh x-2\left[\frac{1}{\sinh x}\cdot\deriv{u}{x}\right]\left(\deriv{y}{u}\right)^2\right).
+\end{split}
+\end{equation*}
+If
+\[
+	\frac{1}{\sinh x}\cdot\deriv{u}{x} = 1
+\]
+then
+\[
+	1 = \sinh x\cdot\deriv{x}{u},
+\]
+and so
+\[
+	\dd u = \sinh x \dd x.
+\]
+Integrating the above
+\begin{equation*}
+\begin{split}
+	u(x) =& \int \dd x \sinh x = \cosh x,\\
+	u(x) =& \cosh x.
+\end{split}
+\end{equation*}
+Thus, the functional becomes
+\begin{align*}
+	S[y] =& \int_{\cosh a}^{\cosh b}\dd u \left(y^2 -2\left(\deriv{y}{u}\right)^2\right),\\
+	S[y] =& \int_{\cosh a}^{\cosh b}\dd u \left(y^2-2\left(y^\prime(u)\right)^2\right)
+\end{align*}
+as required, with $u_1=\cosh a$ and $u_2=\cosh b$.
