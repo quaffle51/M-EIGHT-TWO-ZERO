@@ -1,1 +1,36 @@
 % !TeX root = ./TMA02.tex
+\def\F{\mathcal{F\xspace}}
+\def\L{\left(}
+\def\R{\right)}
+\def\osu{\L\frac{1}{\sqrt{2}}\cdot u\R}
+\[
+	\textrm{Let}\quad \F = y^2 - 2y^{\prime2},
+\]
+then
+\[
+	\pderiv{\F}{y^\prime} = -4 y^\prime,
+\]
+\[
+	\deriv{}{u}\L\pderiv{\F}{y^\prime}\R = \deriv{}{u}\L-4 y^\prime\R = -4 y^\dprime,
+\]
+\[
+	\textrm{and}\quad \deriv{\F}{y} = 2 y.
+\]
+The \el is
+\[
+	-4\deriv{^2y}{u^2} - 2y = 0,
+\]
+which after dividing through by $-4$ becomes
+\[
+	\deriv{^2y}{u^2} +\half y = 0.
+\]
+The auxiliary equation for the above \el is
+\[
+	\lambda^2 + \half = 0, \quad \textrm{and the roots are} \quad \lambda_{1,2} = \pm i\frac{1}{\sqrt{2}}.
+\]
+Hence, the general solution is
+\begin{equation}
+\label{eq:1.1}
+	y = c_1\cos\osu + c_2\sin\osu,
+\end{equation}
+where, $c_1$ and $c_2$ are arbitrary constants.
