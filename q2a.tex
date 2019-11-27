@@ -1,1 +1,36 @@
 % !TeX root = ./TMA02.tex
+\def\F{ y_1^{\prime2}  + 2y_2^{\prime2}+\left(2y_1+y_2\right)^2}%
+Given
+\[
+	S\left[y_1,y_2\right] = \Int{}{}{x}\left( \F \right),
+\]
+the first coupled \el is
+\[
+	\ELE{F}{x}{y_{1}},
+\]
+where
+\[
+	F = \F.
+\]
+So,
+\begin{align*}
+	\pderiv{F}{y_1^\prime} =& 2y_1^\prime,\quad \deriv{\left(2y_1^\prime\right)}{x} = 2y_1^\dprime,\quad\textrm{and}\\
+	\pderiv{F}{y_1}=&2\left(2y_1+y_2\right)2 = 4\left(2y_1+y_2\right).
+\end{align*}
+Thus, the \el for the first coupled equation is
+\begin{equation}
+	2y_1^\dprime - 4\left(2y_1+y_2\right) = 0.
+\end{equation}
+The second coupled \el is
+\[
+	\ELE{F}{x}{y_{2}}.
+\]
+So,
+\begin{align*}
+	\pderiv{F}{y_2^\prime} =& 4y_2^\prime,\quad \deriv{\left(4y_2^\prime\right)}{x} = 4y_2^\dprime,\quad\textrm{and}\\
+	\pderiv{F}{y_2}=&2\left(2y_1+y_2\right).
+\end{align*}
+Thus, the second \el for the second coupled equation is 
+\begin{equation}
+	4y_2^\dprime - 2\left(2y_1+y_2\right) = 0.
+\end{equation}
