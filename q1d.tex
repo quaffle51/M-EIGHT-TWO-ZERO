@@ -1,8 +1,9 @@
 % !TeX root = ./TMA02.tex
 \def\osx[#1]{{\L\frac{1}{\sqrt{2}}\cosh {#1}\R}}%
-Substituting into \eqref{eq:1.1} for $u=\cosh x$ gives,
+\def\os2{\frac{1}{\sqrt{2}}}%
+Substituting into \eqref{eq:1.2} for $u=\cosh x$ gives,
 \begin{equation}
-\label{eq:1.2}
+\label{eq:1.4}
 	y(x) = c_1\cos\osx[x] + c_2\sin\osx[x],
 \end{equation}
 Now, when $x=1$, $y=0$ and when $x=2$, $y=2$. Substituting  these boundary conditions into the above expression for $y$ gives the following pair of simultaneous equations,
@@ -10,3 +11,52 @@ Now, when $x=1$, $y=0$ and when $x=2$, $y=2$. Substituting  these boundary condi
 	0 =& c_1\cos\osx[1] + c_2\sin\osx[1],\quad\textrm{and}\\
 	2 =& c_1\cos\osx[2] + c_2\sin\osx[2].
 \end{align*}
+Solving for the constants $c_1$ and $c_2$ gives,
+\begin{align*}
+	c_1 =&\frac{
+				-2\sin\osx[1]
+		      }
+		      {
+		      	\sin\osx[2]\cos\osx[1]-\sin\osx[1]\cos\osx[2]
+		      },\\
+	c_2 =&\frac{
+				2\cos\osx[1]
+		      }
+		      {
+		      	\sin\osx[2]\cos\osx[1]-\sin\osx[1]\cos\osx[2]
+		      }.      
+\end{align*}
+Making use of the identity $\sin\L\alpha-\beta\R = \sin\alpha\cos\beta -\cos\alpha\sin\beta$, then the above pair of equations can be simplified to
+\begin{align*}
+	c_1 =&\frac{
+				-2\sin\osx[1]
+		      }
+		      {
+		      	\sin \L \os2 \cosh 2 - \os2 \cosh 1\R
+		      },\\
+	c_2 =&\frac{
+				2\cos\osx[1]
+		      }
+		      {
+		      	\sin \L \os2 \cosh 2 - \os2 \cosh 1\R
+		      }.      
+\end{align*}
+Thus, substituting into \eqref{eq:1.4} for $c_1$ and $c_2$ gives,
+\[
+	y(x) = \frac{
+				-2\sin\osx[1]\cos\osx[x] + 2\cos\osx[1]\sin\osx[x]
+			}
+			{
+				\sin \L \os2 \cosh 2 - \os2 \cosh 1\R
+			}.
+\]
+Simplifying the above using the same trig identity as before gives,
+\[
+	y(x) = \frac{
+				2\sin\L\os2\L\cosh x - \cosh 1\R \R
+			}
+			{
+				\sin \L \os2 \cosh 2 - \os2 \cosh 1\R
+			}
+\]
+as required.
