@@ -1,1 +1,72 @@
 % !TeX root = ./TMA02.tex
+Making the linear transformation
+\begin{align*}
+	z_1 =& y_1 + a y_2,\\
+	z_2 = & 2y_1 + y2
+\end{align*}
+to the new dependent variables $z_1, z_2$, where $a$ is a constant, the value of $a$ can be found in such a way that the functional can be written as the sum of two functionals, one of which depends only on $z_1$ and the other only on $z_2$ in the following way:
+\begin{align}
+	z_1 =& y_1 + a y_2,\nonumber\\
+	z_1^\prime =& y_1^\prime + a y_2^\prime,\nonumber\\
+	\label{eq:2.3}
+	y_1^\prime =& z_1^\prime -ay_2^\prime,\quad \textrm{and} \\
+	\label{eq:2.4}
+	y_2^\prime =& \frac{z_1^\prime-y_1^\prime}{a}.
+\end{align}
+Similarly,
+\begin{align}
+	z_2 =& 2y_1 + y_2,\nonumber\\
+	z_2^\prime =& 2y_1^\prime + y_2^\prime,\nonumber\\
+	\label{eq:2.5}
+	y_1^\prime =& z_2^\prime -y_2^\prime,\quad \textrm{and} \\
+	\label{eq:2.6}
+	y_2^\prime =& z_2^\prime - 2y_1^\prime.
+\end{align}
+Equating \eqref{eq:2.3} and \eqref{eq:2.5} gives
+\begin{equation}
+	\label{eq:2.7}
+	z_1^\prime - ay_2^\prime = \frac{z_2^\prime - y_2^\prime}{2},
+\end{equation}
+and rearranging \eqref{eq:2.7} in terms of $y_2^\prime$ gives,
+\begin{equation}
+	\label{eq:2.8}
+	y_2^\prime = \frac{2z_1^\prime - z_2^\prime}{2a-1}.
+\end{equation}
+Now equating \eqref{eq:2.4} and \eqref{eq:2.6}
+\begin{equation}
+	\label{eq:2.9}
+	\frac{z_1^\prime - y_1^\prime}{a} = z_2^\prime - 2y_1^\prime,
+\end{equation}
+and rearranging \eqref{eq:2.9} in terms of $y_1^\prime$ gives,
+\begin{equation}
+	\label{eq:2.10}
+	y_1^\prime = \frac{z_1^\prime - az_2^\prime}{1-2a}.
+\end{equation}
+What is required is $y_1^{\prime2} + 2y_2^{\prime2}$ in terms of just  $z_1$ and  $z_2$. Thus, from \eqref{eq:2.10}
+\begin{align*}
+	y_1^{\prime2} = \frac{\left(z_1^\prime - az_2^\prime\right)^2}{\left(1-2a\right)^2} =
+	\frac{z_1^{\prime2} - 2az_1^\prime z_2^\prime + a^2 z_2^{\prime2}}{\left(1-2a\right)^2},
+\end{align*}
+and from \eqref{eq:2.8} after multiplying the numerator and denominator by $-1$ so that the denominator becomes $1-2a$
+\begin{align*}
+	y_2^{\prime2} = \frac{\left(z_2^\prime - 2z_1^\prime\right)^2}{\left(1-2a\right)^2} = \frac{z_2^{\prime2} -4z_1^\prime z_2^\prime + 4z_1^{\prime2}}{\left(1-2a\right)^2}.
+\end{align*}
+Therefore,
+\begin{align}
+	y_1^{\prime2} + 2y_2^{\prime2} =& \frac{z_1^{\prime2} - 2az_1^\prime z_2^\prime + a^2 z_2^{\prime2}}{\left(1-2a\right)^2} + \frac{2\left(z_2^{\prime2} -4z_1^\prime z_2^\prime + 4z_1^{\prime2}\right)}{\left(1-2a\right)^2},\nonumber\\
+	\label{eq:2,11}
+	=& \frac{9z_1^{\prime2} -2z_1^\prime z_2^\prime\left(a+4\right) + z_2^{\prime2}\left(a^2 + 2\right)}{\left(1-2a\right)^2}.
+\end{align}
+To eliminate the $z_1^\prime z_2^\prime$ term in \eqref{eq:2,11} set $a+4 = 0$. Thus,
+\begin{align}
+	y_1^{\prime2} + 2y_2^{\prime2} =& \frac{9z_1^{\prime2} + 18z_2^{\prime2}}{9^2},\nonumber\\
+	=& \frac{z_1^{\prime2} + 2z_2^{\prime2}}{9}.
+\end{align}
+Consequently,
+\[
+	a = -4,
+\]
+and is the value of $a$ such that the given functional can be written as the sum of two functionals, one which depends only on $z_1$ and the other only on $z_2$. Thus,
+\[
+	S\left[z_1,z_2\right] = \frac{1}{9}\Int{}{}{x} z_1^{\prime2} + \frac{1}{9}\Int{}{}{x}\left(2z_2^{\prime2} + 9z_2^2\right).
+\]
