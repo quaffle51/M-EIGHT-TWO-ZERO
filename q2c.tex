@@ -1,1 +1,85 @@
 % !TeX root = ./TMA02.tex
+\[
+	S\left[z_1,z_2\right] = \Int{}{}{x} \underbrace{\frac{1}{9}z_1^{\prime2}}_{=F_1} + \Int{}{}{x}\underbrace{\left(\frac{2}{9}z_2^{\prime2} + z_2^2\right)}_{=F_2}.
+\]
+The \el for $F_2$ is determined as follows.
+\[
+	\pderiv{F_2}{z_2^\prime} =\frac{4}{9}z_2^\prime,\quad\deriv{}{x}\left(\frac{4}{9}z_2^\prime\right)=\frac{4}{9}z_2^\dprime,\quad \pderiv{F_2}{z_2} = 2z_2.
+\]
+Therefore, the \el is given by
+\[
+	\ELE{F_2}{x}{z_2}.
+\]
+Substituting into the above \el gives,
+\[
+	\frac{4}{9}z_2^\dprime -2z_2 = 0.
+\]
+This differential equation has solution
+\begin{equation}
+\label{eq:2.13}
+	z_2 = c_1\e^{\frac{3}{\sqrt{2}}x} + c_2\e^{-\frac{3}{\sqrt{2}}x},
+\end{equation}
+where $c_1$ and $c_2$ are arbitrary constants.
+
+The \el for $F_1$ is determined as follows.
+\[
+	\pderiv{F_1}{z_1^\prime} =\frac{2}{9}z_1^\prime,\quad\deriv{}{x}\left(\frac{2}{9}z_1^\prime\right)=\frac{2}{9}z_1^\dprime,\quad \pderiv{F_1}{z_1} = 0.
+\]
+Therefore, the \el is given by
+\[
+	\ELE{F_1}{x}{z_1}.
+\]
+Substituting into the above \el gives,
+\[
+	\frac{2}{9}z_1^\dprime = 0.
+\]
+This differential equation has solution
+\begin{equation}
+\label{eq:2.14}
+	z_1 = c_3x + c_4,
+\end{equation}
+where $c_3$ and $c_4$ are arbitrary constants.
+
+From part~(b) $a=-4$, thus,
+\[
+	z_1 = y_1 - 4y_2\quad \textrm{and so}\quad c_3x + c_4 = y_1 - 4y_2.
+\]
+Rearranging the above in terms of $y_1$ gives,
+\[
+	y_1 = c_3x+c_4+4y_2.
+\]
+\[
+	z_2 =2y_1 + y_2\quad\textrm{and so}\quad c_1\e^{\frac{3}{\sqrt{2}}x} + c_2\e^{-\frac{3}{\sqrt{2}}x} = 2y_1 + y_2.
+\]
+Rearranging the above in terms of $y_1$ gives
+\[
+	y_1 = \half c_1\e^{\frac{3}{\sqrt{2}}x} + \half c_2\e^{-\frac{3}{\sqrt{2}}x} - \half y_2.
+\]
+Equating the expressions for $y_1$
+\[
+	c_3x + c_4 + 4y_2 = \half c_1\e^{\frac{3}{\sqrt{2}}x} + \half c_2\e^{-\frac{3}{\sqrt{2}}x} - \half y_2,
+\]
+and rearranging the above in terms of $y_2$
+\begin{align*}
+	{}&\half c_1\e^{\frac{3}{\sqrt{2}}x} + \half c_2\e^{-\frac{3}{\sqrt{2}}x} - c_3x - c_4 = \half y_2 + 4y_2 = \frac{9}{2}y_2,\\
+	{}&y_2 = \frac{2}{9}\left[\half c_1\e^{\frac{3}{\sqrt{2}}x} + \half c_2\e^{-\frac{3}{\sqrt{2}}x} - c_3x - c_4\right].
+\end{align*}
+From above,
+\[
+	c_3x + c_4-y_1 = -4y_2\quad\textrm{and}\quad c_1\e^{\frac{3}{\sqrt{2}}x} + c_2\e^{-\frac{3}{\sqrt{2}}x} - 2y_1 =y_2.
+\]
+Multiplying the expression immediately above for $y_2$ by $-4$ gives,
+\[
+	-4c_1\e^{\frac{3}{\sqrt{2}}x} -4c_2\e^{-\frac{3}{\sqrt{2}}x} + 8y_1 =-4y_2.
+\]
+Thus, 
+\[
+	c_3x + c_4 - y_1 = -4c_1\e^{\frac{3}{\sqrt{2}}x} -4c_2\e^{-\frac{3}{\sqrt{2}}x} + 8y_1,
+\]
+and rearranging the above in terms of $y_1$ gives,
+\[
+	c_3x + c_4 + 4c_1\e^{\frac{3}{\sqrt{2}}x} + 4c_2\e^{-\frac{3}{\sqrt{2}}x} = 8y_1 + y_1 = 9y_1,
+\]
+\[
+	y_1 = \frac{1}{9}\left[c_3x + c_4 + 4c_1\e^{\frac{3}{\sqrt{2}}x} + 4c_2\e^{-\frac{3}{\sqrt{2}}x}\right].
+\]
