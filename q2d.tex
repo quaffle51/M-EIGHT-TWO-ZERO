@@ -1,1 +1,55 @@
-% !TeX root = ./TMA02.tex
+% !TeX r +oot = ./TMA02.tex
+\def\gm{\dfrac{3}{ \sqrt{2} } }%
+\def\g2{\dfrac{9}{2}}
+\def\1o9{\frac{1}{9}}%
+\def\2o9{\frac{2}{9}}%
+\def\4o9{\frac{4}{9}}%
+\def\9o2{\frac{9}{2}}%
+\def\8o9{\frac{8}{9}}%
+\def\32o9{\frac{32}{9}}%
+\def\egx{\e^{\gamma x}}%
+\def\engx{\e^{-\gamma x}}%
+Equation \eqref{eq:2.1} was determined to be
+\[
+	2y_1^\dprime - 4\left(2y_1+y_2\right) = 0.
+\]
+Let $\gamma = \gm$ so that $\gamma^2=\g2$, then,
+\begin{align*}
+	y_1 =& \1o9\left[c_3x + c_4 + 4c_1\e^{\gamma x} + 4c_2\e^{-\gamma x}\right],\\
+	y_1^\prime =& \1o9\left[c_3  + 4c_1\gamma\e^{\gamma x} - 4c_2\gamma\e^{-\gamma x}\right],\quad\textrm{and}\\
+	y_1^\dprime =&  \1o9\left[4c_1\gamma^2\e^{\gamma x} + 4c_2\gamma^2\e^{-\gamma x}\right].\\\\\
+	y_2 =& -\2o9\left[c_3x + c_4-\half c_1\e^{\gamma x} -\half c_2\e^{-\gamma x} \right].
+\end{align*}
+So,
+\begin{align*}
+	2y_1^\dprime -4\left(2y_1 + y_2\right) =&\cancelto{1}{\2o9}\left(4c_1\cancelto{1}{\9o2}\e^{\gamma x} + 4c_2\cancelto{1}{\9o2}\e^{-\gamma x}\right)\\
+	{}& -\8o9\left(\cancelto{0}{c_3 x} + \cancelto{0}{c_4} + 4c_1\e^{\gamma x} + 4c_2\e^{-\gamma x}\right)\\
+	{}& +\8o9\left(\cancelto{0}{c_3 x} + \cancelto{0}{c_4} - \half c_1\e^{\gamma x} - \half c_2\e^{-\gamma x}\right),\\
+	=& \cancelto{0}{\left(4c_1\e^{\gamma x} - \32o9c_1\e^{\gamma x}-\4o9c_1\e^{\gamma x}\right)}\\
+	{}&  + \cancelto{0}{ \left( 4 c_2 \e^{-\gamma x} - \32o9 c_2 \e^{-\gamma x} - \4o9 c_2 \e^{-\gamma x}\right)},\\
+	=& 0.
+\end{align*}
+Consequently, $\left(y_1,y_2\right)$ satisfies the first \el.
+
+Similarly for the second \el equation.
+
+\el \eqref{eq:2.2} was determined to be
+\[
+	4y_2^\dprime - 2\left(2y_1+y_2\right) = 0.
+\]
+\begin{align*}
+	y_2 =& -\2o9\left(c_3x + c_4 -\half c_1 \egx -\half c_2 \engx\right), \\
+	y_2^\prime =& -\2o9\left(c_3 -\half c_1\gamma\egx + \half c_2 \gamma\engx\right), \\
+	y_2^\dprime =& -\2o9\left(-\half c_1\gamma^2 \egx - \half c_2 \gamma^2\engx \right) = \2o9\left(\half c_1\gamma^2 \egx + \half c_2 \gamma^2\engx \right),\quad\textrm{and}\\
+	y_1 =& \1o9\left(c_3x + c_4 + 4c_1\egx + 4c_2\engx\right).
+\end{align*}
+So,
+\begin{align*}
+	4y_2^\dprime - 2\left(2y_1 + y_2\right) =& \cancelto{2}{\8o9}\left(\cancelto{1}{\half} c_1\cancelto{1}{\9o2}\egx + \cancelto{1}{\half} c_2\cancelto{1}{\9o2}\engx\right)\\
+	{}& - \4o9\left(\cancelto{0}{c_3x} + \cancelto{0}{c_4} + 4c_1\egx + 4c_2\engx \right)\\
+	{}& + \4o9\left(\cancelto{0}{c_3x} + \cancelto{0}{c_4} -\half c_1\egx -\half c_2\engx \right),\\
+	=& \cancelto{0}{2c_1\egx - \frac{16}{9}c_1\egx - \2o9 c_1 \egx}\\
+	{}& + 2\cancelto{0}{c_2\engx -\frac{16}{9}c_2\engx - \2o9 c_2\engx},\\
+	=& 0.
+\end{align*}
+Consequently, $\left(y_1,y_2\right)$ satisfies the second \el, too.
