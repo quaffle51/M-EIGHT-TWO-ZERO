@@ -1,13 +1,14 @@
 % !TeX root = ./TMA02.tex
 \def\yp2{y^{\prime2}}%
 \def\2o3{\frac{2}{3}}%
+\def\func{x^5 \lr{\yp2 - \2o3y^3}}
 Let $0 < a < b$ and the given functional is
 \[
-	S[y] = \Int{a}{b}{x} x^5 \lr{\yp2 - \2o3y^3}.
+	S[y] = \Int{a}{b}{x} \func.
 \]
 So the \el can be determined as follows.
 \[
-	\textrm{Let,}\quad F = x^5 \lr{\yp2 - \2o3y^3}, \quad\textrm{then,}
+	\textrm{Let,}\quad F = \func, \quad\textrm{then,}
 \]
 \[
 	\pderiv{F}{y^\prime} = 2y^\prime x^5,\quad \pderiv{F}{y} = -\2o3\cdot3y^2x^5 = -2y^2x^5.

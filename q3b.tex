@@ -1,1 +1,26 @@
 % !TeX root = ./TMA02.tex
+In order to show that $S[y]$ is invariant under the scale transformation $\bar{x}=\alpha x$, $\bar{y} = \beta y$, where $\alpha$ and $\beta$ are constants satisfying $\alpha^2\beta = 1$, consider the following.
+\[
+	\bar{x}=\alpha x,\quad \bar{y}=\beta y,\quad \alpha^2\beta = 1.
+\]
+\begin{align*}
+	\Sv{y} =& \Int{a}{b}{x} \func.\\
+	\Sv{\bar{y}} =& \Int{\bar{a}}{\bar{b}}{\bar{x}} \bar{x}^5\lr{\lr{\deriv{\bar{y}}{\bar{x}}}^2 - \2o3 \bar{y}^3},\\
+	\Sv{\bar{y}} =& \Int{\bar{a}}{\bar{b}}{\bar{x}} \lr{\bar{x}^5\lr{\deriv{\bar{y}}{\bar{x}}}^2 - \2o3\bar{x}^5 \bar{y}^3}.
+\end{align*}
+Now, changing the variables, $\bar{x}=\alpha x$, $\bar{y}=\beta y$ and noting that
+\[
+	\deriv{\bar{y}}{\bar{x}} = \deriv{\bar{y}}{y}\cdot \deriv{y}{x}\cdot \deriv{x}{\bar{x}},
+\]
+\begin{align*}
+	\Sv{\bar{y}} =& \int_a^b\alpha\dd x\lr{\alpha^5x^5\lr{\frac{\beta}{\alpha}\deriv{y}{x}}^2 - \2o3\alpha^5x^5\beta^3y^3},\\
+	\Sv{\bar{y}}=& \int_a^b\alpha\dd x\lr{\alpha^5\frac{\beta^2}{\alpha^2}x^5\lr{\deriv{y}{x}}^2 - \2o3\alpha^5\beta^3x^5y^3},\\
+	\Sv{\bar{y}}=& \Int{a}{b}{x}\lr{\alpha^4\beta^2x^5\lr{\deriv{y}{x}}^2 - \2o3\alpha^6\beta^3x^5y^3},\\
+	\Sv{\bar{y}}=&\alpha^4\beta^2\Int{a}{b}{x}\lr{x^5\lr{\deriv{y}{x}}^2- \2o3\alpha^2\beta x^5y^3},\\
+	\Sv{\bar{y}}=&\alpha^4\beta^2\Int{a}{b}{x}x^5 \lr{y^{\prime2} - \2o3 \alpha^2\beta y^3}.
+\end{align*}
+As $\alpha^2\beta=1$, then the last expression for $\Sv{\bar{y}}$ can be simplified to
+\[
+	\Sv{\bar{y}} = \Int{a}{b}{x}x^5 \lr{y^{\prime2} - \2o3 y^3}.
+\]
+Hence, $\Sv{\bar{y}} = \Sv{y}$ and thus it has been shown that $S[y]$ is invariant under the scale transformation outlined above.
