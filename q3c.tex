@@ -1,1 +1,34 @@
 % !TeX root = ./TMA02.tex
+\def\a2b{\alpha^2\beta}
+In order to deduce that a first-integral of $\Sv{y}$ is
+\[
+	4x^5y y^\prime + x^6\lr{y^{\prime2} + \2o3 y^3} = c
+\]
+where $c$ is a constant use will be made of \nt.\marginnote{See definition~7.1, p.165.}
+\[
+	\a2b = 1,\quad \alpha=\lr{1+\delta},\quad \textrm{then}\quad \lr{1+\delta}^2\beta=1.
+\]
+\[
+	\Phi = \alpha x = \lr{1+\delta}x = x + \delta x.
+\]
+\marginnote{HB p.2 Binomial expansion.}
+\[
+	\Psi = \beta y = \frac{1}{\lr{1+\delta}^2}y = y-2y\delta\quad \textrm{to first order}.
+\]
+\[
+	\phi =\left. \pderiv{\Phi}{\delta} \right| _{\delta=0} = x,\qquad \psi = \left. \pderiv{\Psi}{\delta} \right| _{\delta=0} = -2y.
+\]
+\[
+	F = x^5\lr{y^{\prime2} - \2o3 y^3},\qquad \pderiv{F}{y^\prime} = 2x^5 y^\prime.
+\]
+Now making use of \nt\marginnote{HB p.21 c.f. equation $\lr{\textrm{FI}}$.}\marginnote{A first-integral of $\Sv{y}$.}
+\[
+	\pderiv{F}{y^\prime}\psi + \lr{F - y^\prime \pderiv{F}{y^\prime}}\phi = constant.
+\]
+\begin{align*}
+	\pderiv{F}{y^\prime}\psi + \lr{F - y^\prime \pderiv{F}{y^\prime}}\phi =& 2x^5 y^\prime\lr{-2y} + \lr{ x^5\lr{y^{\prime2} - \2o3 y^3} - y^\prime 2x^5 y^\prime}x,\\
+	=& -4 x^5yy^\prime + x^6\lr{y^{\prime2}-\2o3 y^3 - 2y^{\prime2}} = -c,\\
+	=& -4 x^5yy^\prime + x^6\lr{-y^{\prime2}-\2o3 y^3} = -c,\\
+	=& 4 x^5yy^\prime + x^6\lr{y^{\prime2}+\2o3 y^3} = c,\\
+\end{align*}
+as required.
