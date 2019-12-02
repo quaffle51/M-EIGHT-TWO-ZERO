@@ -1,1 +1,89 @@
 % !TeX root = ./TMA02.tex
+\def\y1p{y_1^{\prime}}
+\[
+	y_1 = Ax^{-2}\quad\textrm{and}\quad y_2=\frac{B}{\lr{x^2 +\frac{B}{24}}^2}.
+\]
+The first-integral is 
+\[
+	4 x^5yy^\prime + x^6\lr{y^{\prime2}+\2o3 y^3} = c.
+\]
+\marginnote{A and B are constants.}[0.6cm]
+\[
+	\y1p = -2Ax^{-3},\quad y_1^{\prime2} = \lr{-2Ax^{-3}}^2 = 4A^2x^{-6},\quad y_1^3 = A^3x^{-6}.
+\]
+Substituting these expressions into the first-integral gives,\marginnote{Recall, $c$ is a constant.}[1.2cm]
+\begin{align*}
+	4x^5Ax^{-2}\lr{-2Ax^{-3}} + x^6\lr{4A^2x^{-6} + \2o3 A^3 x^{-6}} = c,\\
+	-8A^2 + 4A^2 + \2o3 A^3 = c,\\
+	\frac{-24A^2 + 12A^2 + 2A^3}{3} = c,\\
+	\underbrace{\frac{-12A^2+2A^3}{3}}_\textrm{and this is a constant so equation is satisfied.} = c.
+\end{align*}
+\[
+	y_2 = \frac{B}{\lr{x^2 + \frac{B}{24}}^2},\quad y_2 = B \lr{x^2 + \frac{B}{24}}^{-2},\quad y_2^\prime = -\frac{4Bx}{\lr{x^2 + \frac{B}{24}}^3}.
+\]
+Substituting these expressions into the first-integral gives,
+\begin{align*}
+	c=& 4x^5\frac{B}{\lr{x^2 + \frac{B}{24}}^2}\frac{\lr{-4Bx}}{\lr{x^2 + \frac{B}{24}}^3} + x^6\lr{\frac{16B^2x^2}{\lr{x^2 + \frac{B}{24}}^6} + \2o3\frac{B^3}{\lr{x^2 + \frac{B}{24}}^6}},\\
+	c=& -\frac{16x^6B^2}{\lr{x^2 + \frac{B}{24}}^5} + x^6\lr{\frac{48B^2x^2 + 2B^3}{3\lr{x^2 + \frac{B}{24}}^6}},\\
+	c=& -\frac{16x^6B^2}{\lr{x^2 + \frac{B}{24}}^5} + \frac{2x^6B^2}{\lr{x^2 + \frac{B}{24}}^5}\lr{\frac{24x^2 + B}{3\lr{x^2 + \frac{B}{24}}}},\\
+	c=& -\frac{16x^6B^2}{\lr{x^2 + \frac{B}{24}}^5} + \frac{2x^6B^2}{\lr{x^2 + \frac{B}{24}}^5}\lr{\frac{\cancelto{1}{\lr{24x^2 + B}}}{\cancelto{\frac{1}{8}}{\frac{3}{24}}\cancelto{1}{\lr{24x^2 + B}}\,\,\,}},\\
+	c=& -\frac{16x^6B^2}{\lr{x^2 + \frac{B}{24}}^5}  + \frac{2x^6B^2}{\lr{x^2 + \frac{B}{24}}^5}\lr{8},\\
+	c=& -\frac{16x^6B^2}{\lr{x^2 + \frac{B}{24}}^5}  + \frac{16x^6B^2}{\lr{x^2 + \frac{B}{24}}^5},\\
+	c=& 0.
+\end{align*}
+Thus, $y_1$ and $y_2$ both give solutions to the first-integral for any constant values $A$ or $B$.
+
+The \el is given by,
+\[
+	\ELE{F}{x}{y},
+\]
+and
+\[
+	F = x^5\lr{y^{\prime2} - \2o3 y^3}.
+\]
+\[
+	\pderiv{F}{y^\prime} = 2x^5y^\prime,\quad \deriv{}{x}\lr{2x^5y^\prime} = 2x^5y^{\dprime} + y^\prime 10x^4.
+\]
+\[
+	\pderiv{F}{y} = \pderiv{}{y}\lr{x^5y^{\prime2} - \2o3 x^5 y^3} = -2x^5y^2.
+\]
+The \el is
+\[
+	2x^5y^\dprime + 10x^4y^\prime + 2x^5 y^2 = 0,
+\]
+which, after dividing through out by $2x^5$ gives,
+\[
+	y^\dprime + \frac{5}{x} y^\prime + y^2 = 0,\quad \textrm{as determined previously in part a above.}
+\]
+Now,
+\[
+	y=Ax^{-2},\quad y^\prime = -2Ax^{-3},\quad y^\dprime = 6Ax^{-4},
+\]
+and so,
+\begin{align*}
+	y^\dprime + \frac{5}{x} y^\prime + y^2 =& 6Ax^{-4} + \frac{5}{x}\lr{-2Ax^{-3}} + A^2x^{-4},\\
+	=& 6Ax^{-4} - 10Ax^{-4} + A^2x^{-4}.\\
+	=& -4Ax^{-4} + A^2x^{-4},\\
+	=& \lr{A-4}Ax^{-4} = 0\quad \textrm{for all } A.
+\end{align*}
+Therefore, $A=0$ or $A=4$ satisfies the \el, so the value of the constant $A$ is not arbitrary.
+\begin{align*}
+	y =& \frac{B}{\lr{x^2 + \frac{B}{24}}^2}.\\
+	y^\prime =& \frac{-2B2x}{\lr{x^2 + \frac{B}{24}}^3} = \frac{-4Bx}{\lr{x^2 + \frac{B}{24}}^3}.\\
+	y^\dprime =& \frac{24Bx^2}{\lr{x^2 + \frac{B}{24}}^4} - \frac{4B}{\lr{x^2 + \frac{B}{24}}^3}.
+\end{align*}
+The \el is
+\[
+	y^\dprime + \frac{5}{x}y^\prime + y^2 = 0.
+\]
+Substituting into the \el for the expressions immediately above gives,
+\begin{align*}
+	{}&y^\dprime + \frac{5}{2}y^\prime + y^2 = \frac{24Bx^2}{\lr{x^2 + \frac{B}{24}}^4} - \frac{4B}{\lr{x^2 + \frac{B}{24}}^3}
+	- \frac{5}{\cancelto{1}{x}}\frac{4B\cancelto{1}{x}}{\lr{x^2 + \frac{B}{24}}^3} + \frac{B^2}{\lr{x^2 + \frac{B}{24}}^4},\\
+	{}&= \lr{x^2 + \frac{B}{24}}^{-4}\lr{24Bx^2 - 4B\lr{x^2+\frac{B}{24}}-20B\lr{x^2+\frac{B}{24}} + B^2},\\
+	{}&= \lr{x^2 + \frac{B}{24}}^{-4}\lr{\cancel{24Bx^2} - \cancel{4Bx^2} - \frac{B^2}{6} - \cancel{20Bx^2} - \frac{\cancelto{5}{20}}{\cancelto{6}{24}}\,\,\,B^2 + B^2}\\
+	{}&= \lr{x^2 + \frac{B}{24}}^{-4}\lr{-\frac{B^2}{6} - \frac{5}{6}B^2 + \frac{6}{6}B^2},\\
+	{}&= \frac{1}{6}\lr{x^2 + \frac{B}{24}}^{-4}\lr{-6B^2 + 6B^2},\\
+	{}&\textrm{so,}\quad y^\dprime + \frac{5}{2}y^\prime + y^2 = 0.
+\end{align*}
+Thus, the \el equation is satisfied regardless of the value of the constant $B$. Consequently, $B$ is an arbitrary constant.
