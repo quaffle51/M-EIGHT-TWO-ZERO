@@ -1,1 +1,91 @@
 % !TeX root = ./TMA02.tex
+The functional is
+\[
+	\Sv{y} = \Int{0}{1}{x}\lr{y^\prime}^n\e^y,\quad	y(0)=1,\quad y(1) = A >1,
+\]
+and the integrand $F=\lr{y^\prime}^n\e^y$ is independent of the independent variable, $x$, so that (first-integral),
+\[
+	y^\prime \deriv{F}{y^\prime} - F = constant,\quad F=\lr{y^\prime}^n\e^y.
+\]
+\[
+	\pderiv{F}{y^\prime} = n\e^y\lr{y^\prime}^{n-1},\quad y^\prime \pderiv{F}{y^\prime} = ne^y\lr{y^\prime}^n.
+\]
+\[
+	\therefore\quad ne^y\lr{y^\prime}^n - \lr{y^\prime}^n\e^y = constant.
+\]
+\[
+	\lr{n-1}\e^y\lr{y^\prime}^n = constant.
+\]
+\[
+	\lr{n-1}\lr{y^\prime}^n = constant\cdot \e^{-y}.
+\]
+Let $constant = \lr{n-1}\cdot C_0^{\,n}$, where $C_0$ is an arbitrary constant.  Then,
+\[
+	\lr{n-1}\lr{y^\prime}^n = \lr{n-1}C_0^{\,n}\cdot\e^{-y},
+\]
+and so,
+\[
+	y^\prime = C_0\cdot\e^{-\lr{\dfrac{y}{n}}}.
+\]
+This differential equation can be solved as follows.
+
+First rewrite the equation as
+\[
+	\deriv{y(x)}{x} = C_0\cdot\e^{-\lr{\dfrac{y(x)}{n}}}.
+\]
+Divide throughout  by $\exp\lr{-y(x)/n}$ to obtain
+\[
+	\e^{\lr{\dfrac{y(x)}{n}}}\cdot \deriv{y(x)}{x}=C_0.
+\]
+Integrate the above with respect to $x$
+\[
+	\Int{•}{•}{x} \,e^{\lr{\dfrac{y(x)}{n}}}\cdot \deriv{y(x)}{x} = \Int{•}{•}{x} C_0.
+\]
+Thus,
+\[
+	n\cdot e^{\lr{\dfrac{y(x)}{n}}} = C_0 x + C_1,\quad\textrm{where $C_1$ is an arbitrary constant.}
+\]
+Solving the above for $y(x)$
+\[
+	\ln\lr{n\cdot e^{\lr{\dfrac{y(x)}{n}}}} = \ln\lr{C_0 x + C_1},
+\]
+\[
+	\ln\lr{n} + \ln\lr{\e^{\lr{\dfrac{y(x)}{n}}}} = \ln\lr{C_0 x + C_1},
+\]
+\[
+	\dfrac{y(x)}{n} + \ln\lr{n} = \ln\lr{C_0 x + C_1},
+\]
+\[
+	y(x) = n\cdot\ln\lr{C_0 x + C_1} -n\cdot\ln\lr{n}.
+\]
+Therefore,
+\[
+	y(x) = n\cdot\ln\lr{\dfrac{C_0 x + C_1}{n}}.
+\]
+Now, the boundary conditions $y(0)=1$ and $y(1) = A >1$ will allow the constants $C_0$ and $C_1$ to be found.
+
+When $x=0$,\,\,$y=1$,
+\begin{align*}
+	{}& 1 =\,n\cdot\ln\lr{\dfrac{C_1}{n}},\\
+	{}& \dfrac{1}{n} =\,\ln\lr{\dfrac{C_1}{n}},\\
+	{}& \e^{\lr{\dfrac{1}{n}}} =\, \dfrac{C_1}{n},\\
+	{}& C_1 =\, n\cdot \e^{\lr{\dfrac{1}{n}}},\quad \textrm{so}\\
+	{}& y(x) =\, n\cdot\ln\lr{\dfrac{C_0 x + n\cdot\e^{\lr{\dfrac{1}{n}}}}{n}}.
+\end{align*}
+When $x=1,\, y=A$,
+\begin{align*}
+	{}& A =\, n\cdot\ln\lr{\dfrac{C_0 + n\cdot\e^{\lr{\dfrac{1}{n}}}}{n}},\\
+	{}& \dfrac{A}{n} =\, \ln\lr{\dfrac{C_0 + n\cdot\e^{\lr{\dfrac{1}{n}}}}{n}},\\
+	{}& \e^{\lr{\dfrac{A}{n}}} =\, \dfrac{C_0 + n\cdot\e^{\lr{\dfrac{1}{n}}}}{n},\\
+	{}& n\cdot\e^{\lr{\dfrac{A}{n}}} =\,  C_0 + n\cdot\e^{\lr{\dfrac{1}{n}}},\quad \textrm{so}\\
+	{}& C_0 =\,n\lr{e^{\lr{\dfrac{A}{n}}} - e^{\lr{\dfrac{1}{n}}}}.
+\end{align*}
+Let $C_0/n = c$, a constant, then
+\[
+	y(x) =\,n\cdot\ln\lr{c x + \e^{\lr{\dfrac{1}{n}}}},
+\]
+and
+\[
+	c = \lr{e^{\lr{\dfrac{A}{n}}} - e^{\lr{\dfrac{1}{n}}}}.
+\]
+as required.
