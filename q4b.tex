@@ -1,1 +1,143 @@
 % !TeX root = ./TMA02.tex
+The Jacobi equation will be used to determine the nature of this stationary path as follows.\marginnote{HB p.22}[0cm]
+
+Let $n > 1$ be a positive integer.
+\[
+	F\lr{y,y^\prime} = \lr{y^\prime}^n\e^y.
+\]
+\[
+	P\lr{x} = \pderiv{^2F}{y^{\prime2}} = \pderiv{^2\lr{\lr{y^\prime}^n\e^y}}{y^{\prime^2}},
+\]
+\[
+	\pderiv{F}{y^\prime} = n\lr{y^\prime}^{n-1}\e^y.
+\]
+\[
+	P(x)=\pderiv{^2F}{y^{\prime2}} = n\lr{n-1}\lr{y^\prime}^{n-2}\e^y,
+\]
+where $y = n\ln\lr{cx + e^{\frac{1}{n}}}$. Therefore,
+\[
+	y^\prime = \frac{nc}{\lr{cx + e^{\frac{1}{n}}}},\qquad\textrm{where}\quad c=\e^{\frac{A}{n}} - \e^{\frac{1}{n}}.
+\]
+So,
+\begin{align*}
+	P(x) =& n(n-1)\lr{\dfrac{nc}{cx + \e^{\frac{1}{n}}}}^{n-2}\e^{ n\ln\lr{cx + e^{\frac{1}{n}}}},\\
+		 =& n(n-1)\lr{\dfrac{nc}{cx + \e^{\frac{1}{n}}}}^{n-2}\lr{cx + e^{\frac{1}{n}}}^n,\\
+		 =& n(n-1)\lr{\dfrac{nc}{cx + \e^{\frac{1}{n}}}}^{n}\frac{\lr{cx + e^{\frac{1}{n}}}^2\lr{cx + e^{\frac{1}{n}}}^n}{(nc)^2},\\
+		 =& n(n-1)\frac{(nc)^n\lr{cx + e^{\frac{1}{n}}}^{2+n}}{(nc)^2\lr{cx + e^{\frac{1}{n}}}^{n}},\\
+		 =& n(n-1)(nc)^{n-2}\lr{cx + e^{\frac{1}{n}}}^{n} > 0.
+\end{align*}
+Note: $c=\e^{\frac{A}{n}} - \e^{\frac{1}{n}} > 0$ because $A>1$, $n>1$, thus, $n(n-1) > 0$ and $nc>0$. The term $\lr{cx + e^{\frac{1}{n}}}^{2} > 0$ regardless of the  terms within the brackets as it is squared.
+
+Thus, if the stationary path $y(x)$ is an extremum then it will be a local minimum.
+
+\[
+	Q(x) = \pderiv{^2F}{y^2} - \deriv{}{x}\lr{\psderiv{F}{y}{y^\prime}}.
+\]
+\[
+	F = \lr{y^\prime}^n\e^y,\qquad \pderiv{F}{y}=\lr{y^\prime}^n\e^y,\qquad \pderiv{^2F}{y^2}=\lr{y^\prime}^n\e^y.
+\]
+\[
+	\pderiv{F}{y^\prime} = n\lr{y^\prime}^{n-1}\e^y,\qquad \psderiv{F}{y}{y^\prime} = n\lr{y^\prime}^{n-1}\e^y.
+\]
+So,
+\begin{align*}
+	Q(x) =& \lr{y^\prime}^n\e^y - \deriv{}{x}\lr{n\lr{y^\prime}^{n-1}\e^y},\\
+	=& \lr{y^\prime}^n\e^y - \lr{n\lr{y^\prime}^{n-1}y^\prime\e^y +\e^yn(n-1)\lr{y^\prime}^{n-2}y^\dprime},\\
+	=& \lr{y^\prime}^n\e^y - \lr{n\lr{y^\prime}^{n}\e^y +\e^yn(n-1)\lr{y^\prime}^{n-2}y^\dprime},\\
+	=& \e^y\lr{\lr{y^\prime}^n - n\lr{y^\prime}^{n} - n(n-1)\lr{y^\prime}^{n-2}y^\dprime},\\
+	=& \e^y\lr{(1-n)\lr{y^\prime}^n - n(n-1)\lr{y^\prime}^{n-2}y^\dprime},\\
+	=& \e^y\lr{\lr{y^\prime}^n\lrs{(1-n)-n(n-1)\lr{y^\prime}^{-2}y^\dprime}},\\
+	=& \e^y\lr{\lr{y^\prime}^n\lrs{(1-n)-\frac{n(n-1)}{\lr{y^\prime}^{2}}y^\dprime}}.
+\end{align*}
+Now,
+\[
+	y^\prime = \frac{nc}{cx + \e^{\frac{1}{n}}},\qquad y^\dprime = -\frac{nc^2}{\lr{cx + \e^{\frac{1}{n}}}^2}.
+\]
+Substituting into the last equation for $Q(x)$ for $y^\prime$ and $y^\dprime$ gives,
+\begin{align*}
+	Q(x) =& \e^y\lr{\frac{(nc)^n}{\lr{cx + \e^{\frac{1}{n}}}^n}\lrs{(1-n)-\frac{n(n-1)}{\frac{nc^2}{\lr{cx + \e^{\frac{1}{n}}}^2}}\lr{-\frac{nc^2}{\lr{cx + \e^{\frac{1}{n}}}^2}}}},\\
+	=& \e^y\lr{\frac{(nc)^n}{\lr{cx + \e^{\frac{1}{n}}}^n}\lrs{
+			(1-n)-\frac{n(n-1)(-nc)^2}{(nc)^2}
+	}},\\
+	=& \e^y\lr{
+			\frac{(nc)^n}{\lr{cx + \e^{\frac{1}{n}}}^n}\lrs{
+				(1-n) + (n-1)
+			}
+	},\\
+	=& 0.
+\end{align*}
+The Jacobi equation is\marginnote{HB p.22}[1.25cm]
+\[
+	\deriv{}{x}\lr{
+		P(x)\deriv{u}{x}
+	} - Q(x)u = 0,\quad	u(a) = 0,\quad u^\prime(a) = 1.
+\]
+Thus,
+\[
+	P(x)\deriv{u}{x} = k,\quad \textrm{where $k$ is a constant.}
+\]
+\[
+	\deriv{u}{x} =k\frac{1}{P(x)} = k\cdot\frac{\lr{cx+\e^{\frac{1}{n}}}^{-2}}{n(n-1)(nc)^{n-2}},\quad n>1.
+\]
+\[
+	\textrm{Redefining } k,\quad \deriv{u}{x} = k\lr{cx + \e^{\frac{1}{n}}}^{-2}.
+\]
+\[
+	u = k\Int{•}{•}{x}\frac{1}{\lr{cx + \e^{\frac{1}{n}}}^2}.
+\]
+\[
+	\textrm{Let } s = cx + \e^{\frac{1}{n}},\quad \textrm{then } \deriv{s}{x} = c,
+\]
+\[
+	\textrm{and}\quad \deriv{x}{s} = \dfrac{1}{\deriv{s}{x}} = \frac{1}{c}.
+\]
+\[
+\textrm{Thus, } u=k\Int{•}{•}{s} \frac{1}{s^2}\deriv{x}{s} = \frac{k}{c}\Int{•}{•}{s}s^{-2}.
+\]
+\[
+	u = A - \frac{k}{c}s^{-1},\qquad\textrm{where $A$ is a constant.}
+\]
+Substituting back for $s$ gives, $u=A - \dfrac{k}{c}\dfrac{1}{\lr{cx + \e^{\frac{1}{n}}}}$.
+
+Applying the initial condition $u(0) = 0$ enables the constant $A$ to be found,
+\[
+	A = \dfrac{k}{c\cdot\e^\frac{1}{n}}.
+\]
+Hence,
+\[
+	u(x) = \dfrac{k}{c\cdot\e^\frac{1}{n}} - \dfrac{k}{c}\dfrac{1}{\lr{cx + \e^{\frac{1}{n}}}}.
+\]
+Differentiating the above expression with respect to $x$ gives,
+\[
+	u^\prime(x) = (-1)\cdot\lr{-\frac{k}{c}}\cdot\frac{1}{\lr{cx + \e^{\frac{1}{n}}}^2}\cdot c = k\cdot \frac{1}{\lr{cx + \e^{\frac{1}{n}}}^2}.
+\]
+Applying the initial condition $u^\prime(0)=1$ gives,
+\[
+	1 = k\cdot \frac{1}{\lr{\e^\frac{1}{n}}^2},\quad \textrm{thus, } k = \e^{\frac{2}{n}}.
+\]
+Hence,
+\begin{align*}
+	u(x) = & \frac{k}{c \e^{\frac{1}{n}}} - \frac{k}{c} \frac{1}{\lr{cx + \e^{\frac{1}{n}}}},\quad\textrm{where, } k=\e^{\frac{2}{n}},\\
+	u(x) = & \frac{\e^{\frac{2}{n}}}{c \e^{\frac{1}{n}}} - \frac{\e^{\frac{2}{n}}}{c} \frac{1}{\lr{cx + \e^{\frac{1}{n}}}},\\
+	u(x) = & \frac{\e^{\frac{1}{n}}}{c} - \frac{\e^{\frac{2}{n}}}{c} \frac{1}{\lr{cx + \e^{\frac{1}{n}}}},
+\end{align*}
+\begin{align*}
+	u(x) = & \frac{\e^{\frac{1}{n}}}{c}\lrs{1 - \frac{\e^{\frac{1}{n}}}{\lr{cx + \e^{\frac{1}{n}}}}},\\
+	u(x) = & \frac{\e^{\frac{1}{n}}}{c}\lrs{\frac{cx + \e^{\frac{1}{n}} - \e^{\frac{1}{n}}}{\lr{cx + \e^\frac{1}{n}}}},\\
+	u(x) = & \frac{\e^{\frac{1}{n}}}{c}\lrs{\frac{cx}{\lr{cx + \e^\frac{1}{n}}}},\\
+	u(x) = & \frac{\e^\frac{1}{n} x}{cx + \e^\frac{1}{n}}.
+\end{align*}
+Equating $u(x)$ to zero gives,
+\begin{align*}
+	0 =& \frac{e^\frac{1}{n} x}{cx + \e^\frac{1}{n}},\\
+	0 =& \e^\frac{1}{n} x,
+\end{align*}
+which can only be true when $x=0$.  Therefore, the closed interval $[0,1]$ does not contain points conjugate to the point $x=0$. 
+
+From Theorem~8.4:\marginnote{A sufficient condition, Notes, p.185.}[0cm]
+\begin{itemize}
+  \item The function $y(x)$ satisfies the \el;
+  \item Along the curve $y(x), P(x) = F_{y^\prime y^\prime} > 0$ for $0\leq x \leq 1$; and
+  \item The closed interval $[0,1]$ contains no points conjugate to the point $x=0$.
+\end{itemize}
+Hence, the functional has a weak minimum along $y(x)$.
