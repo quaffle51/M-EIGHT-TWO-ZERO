@@ -1,1 +1,43 @@
 % !TeX root = ./TMA02.tex
+\vspace{-6mm}
+\begin{equation*}
+	F=f(x)\,\,\sqrt[•]{1+y^{\prime2}} = f(x)\,\,\lr{1 + y^{\prime2}}^\half.
+\end{equation*}
+The \el is,
+\[
+	\ELE{F}{x}{y},
+\]
+\[
+	\deriv{}{x}\lr{\pderiv{F}{y^\prime}} = 0,\quad\textrm{so, }\quad\pderiv{F}{y^\prime} = \beta,\quad \textrm{where } \beta \textrm{ is a constant.}
+\]
+\[
+	\pderiv{F}{y^\prime} =\half\, f(x) \lr{ 1+y^{\prime2}}^{-\half}\,2y^\prime = \beta.
+\]
+\begin{align*}
+	f(x) \,   \frac{y^\prime}{\lr{1 + y^{\prime2}}^\half} =&\beta,\\
+	f(x)^2 \, \frac{y^{\prime2}}{\lr{1 + y^{\prime2}}} =& \beta^2,\\
+	f(x)^2 \,y^{\prime2} = \beta^2\lr{1 + y^{\prime2}} =& \beta^2 + \beta y^{\prime2},\\
+	f(x)^2 \,y^{\prime2} - \beta^2 - \beta^2 y^{\prime2} =& 0,\\
+	y^{\prime2} \,\lr{f(x)^2 - \beta^2 } =& \beta^2,\\
+	y^{\prime2}  = \frac{\beta^2}{\lr{f(x)^2 - \beta^2 }}.\\
+	\textrm{Thus,}\quad y^{\prime}  = \frac{\beta}{\sqrt{f(x)^2 - \beta^2 }}.
+\end{align*}
+Integrating the last expression gives,
+\[
+	y(x) = C + \beta \Int{a}{x}{w}\frac{1}{\sqrt{f(w)^2 - \beta^2 }},\quad\textrm{where $C$ is a constant.}
+\]
+Now, $y(a) = A$, and applying this to the above expression for $y(x)$ gives,
+\[
+	A = C + \cancelto{0}{\beta\int_a^a\dd w\, \frac{1}{\sqrt{f(w)^2 -\beta^2}}},\qquad\textrm{therefore, } C=A.
+\]
+\[
+	\textrm{Hence,}\qquad y(x) = A + \beta \Int{a}{x}{w}\frac{1}{\sqrt{f(w)^2 - \beta^2 }},\qquad\textrm{as required.}
+\]
+Also, $y(b) = B$ so,
+\[
+	B = A + \beta\int_a^b\dd w\, \frac{1}{\sqrt{f(w)^2 -\beta^2}}.
+\]
+Hence, the constant $\beta$ satisfies,
+\[
+	B - A = \beta \int_a^b\dd w\, \frac{1}{\sqrt{f(w)^2 -\beta^2}}.
+\]
