@@ -1,1 +1,66 @@
 % !TeX root = ./TMA02.tex
+\def\y^p2{y^{\prime2}}
+\def\F_ypyp{F_{y^\prime y^\prime}}
+Jacobi's equation is given by\marginnote{HB p.22.}[0cm]
+\[
+	\deriv{}{x}\lr{P\,\deriv{u}{x}} - Qu =0,\quad a\leq x \leq b,
+\]
+where
+\[
+	P(x) = \pderiv{^2F}{y^{\prime2}} = F_{y^{\prime}y^{\prime}},
+\]
+and
+\[
+	Q(x) = \pderiv{^2F}{y^2} - \deriv{}{x}\lr{\psderiv{F}{y}{y^\prime}} = F_{yy} - \deriv{}{x}\lr{F_{yy^\prime}}.
+\]
+From part~(a)
+\begin{equation*}
+	F=f(x)\,\,\sqrt[•]{1+y^{\prime2}} = f(x)\,\,\lr{1 + y^{\prime2}}^\half.
+\end{equation*}
+\[
+	F_y =0,\qquad F_{yy} =0,\quad F_{yy^\prime} = 0\quad\textrm{and hence,}\quad Q(x)=0.
+\]
+The express for $P(x)$ is determined as follows,
+\begin{align*}
+	F =& f(x)\,\,\lr{1 + y^{\prime2}}^\half.\\
+	F_{y^\prime} =& \half f(x)\lr{1 + y^{\prime2}}^{-\half}\,2y^\prime,\\
+	F_{y^\prime} =& f(x)\lr{1 + y^{\prime2}}^{-\half}\,y^\prime.
+\end{align*}
+Using the product rule to take the partial derivative of the express for $F_{y^\prime}$ with respect to $y^\prime$, and to be clear about its derivation,
+\[
+	\textrm{Let}\quad u = f(x)\lr{1 + y^{\prime2}}^{-\half}\quad\textrm{and}\quad v=y^\prime.
+\]
+\[
+	\pderiv{F_{y^\prime}}{y^\prime} = F_{y^{\prime}y^{\prime}} = u\,\deriv{v}{y^{\prime}} + u\,\deriv{u}{y^{\prime}}.
+\]
+Then, using the chain rule to obtain the partial derivative of $u$ with respect to $y^\prime$,
+\[
+	\deriv{u}{\yp} = -\half\,f(x)\lr{1 + \y^p2}^{-\frac{3}{2}}\cdot 2\yp = -f(x)\lr{1 + \y^p2}^{-\frac{3}{2}}\cdot \yp,
+\]
+and
+\[
+	\deriv{v}{\yp} = 1.
+\]
+Thus,
+\begin{align*}
+	\F_ypyp =& f(x)\lr{1 + \y^p2}^{-\half} + y^\prime\lrs{-f(x)\lr{1 + \y^p2}^{-\frac{3}{2}}\cdot y^{\prime}},\\
+	=& f(x)\lr{1 + \y^p2}^{-\half} - f(x)\lr{1 + \y^p2}^{-\frac{3}{2}}\cdot y^{\prime2},\\
+	=& \frac{f(x)}{\lr{1 + \y^p2}^{\half}}\lrs{1 - \frac{y^{\prime2}}{\lr{1 + \y^p2}}},\\
+	=& \frac{f(x)}{\lr{1 + \y^p2}^{\half}}\lrs{\frac{1}{\lr{1 + \y^p2}}},\\
+	=& \frac{f(x)}{\lr{1 + \y^p2}^\frac{3}{2}}.
+\end{align*}
+Hence, we have
+\[
+	P(x) = \frac{f(x)}{\lr{1 + \y^p2}^\frac{3}{2}} > 0,\quad\textrm{as}\quad f(x) > 0.
+\]
+\textcolor{black}{\marginnote{Addition to my 2019 submission reflecting my Tutor's comments.}%
+To determine if conjugate points to $x=a$ exist or not consider the following.
+\begin{align*}
+	Q(x) = 0\quad\textrm{so }\deriv{}{x}\lr{P(x)\,u^\prime} = 0.\\
+	u^\prime = \frac{k}{P(x)}\quad\textrm{and }u(a)=0, u^\prime(a) = 1.\\
+	\textrm{Therefore, } k=P(a),\quad\textrm{so }u^\prime =\frac{P(a)}{P(x)} > 0.
+\end{align*}
+Consequently, $u$ is strictly increasing, so $u(x) > u(a)=0$ for all $x>a$. Thus, $u\neq 0$ on the interval $(a,b]$, which means there are no conjugate points.
+}
+
+This shows that the stationary path found in part~(a) gives a weak local minimum (as $P(x) >0$ for all $a\leq x\leq b$) of the functional $S[y]$.
