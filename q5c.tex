@@ -1,1 +1,33 @@
 % !TeX root = ./TMA02.tex
+\def\hp{h^\prime}%
+If $y(x)$ is the stationary path $\lr{\yp(x)\neq0\textrm{ and } f(x)\neq 0}$ the value of the functional along another admissible path $x+h$ is
+\[
+	S[y+h] = \int_a^b\dd x\, f(x)\sqrt{1+\lr{y^\prime + h^\prime}^2}.
+\]
+Using the result
+\[
+	\sqrt{1+(z+u)^2} - \sqrt{1+z^2} \geq \frac{zu}{\sqrt{1+z^2}},
+\]
+for the case where $z=\yp$ and $u=\hp$, it is seen that
+\[
+	\sqrt{1+(\yp+\hp)^2} - \sqrt{1+y^{\prime2}} \geq \frac{\yp\hp}{\sqrt{1+y^{\prime2}}}.
+\]
+\[
+	S[y+h] - S[y] = \int_a^b\dd x\,\lrc{f(x)\sqrt{1+\lr{y^\prime + h^\prime}^2} - f(x)\sqrt{1+y^{\prime2}}},
+\]
+\begin{align*}
+	S[y+h] - S[y] =& \int_a^b\dd x\,f(x)\lrc{\sqrt{1+\lr{y^\prime + h^\prime}^2} - \sqrt{1+y^{\prime2}}},\\
+	\geq& \int_a^b\dd x\,f(x)\frac{\yp}{\sqrt{1+y^{\prime2}}}\hp,\quad f(x) > 0.
+\end{align*}
+\marginnote{Inequality sign passes through integral here as $f(x)>0$.}[-1.5cm]%	
+The \el for the functional gave
+\[
+	f(x)\frac{\yp}{\sqrt{1+y^{\prime2}}}=\beta,
+\]
+where $\beta$ is a constant.  Hence,
+\[
+	S[y+h] - S[y] \geq \beta\int_a^b\dd x\,\hp = 0
+\]
+as $h(a)=0$ and $h(b)=0$ since $y(a)=A$ and $y(b) = B$.
+
+As $\yp(x) \neq	0$ and $f(x) \neq 0$ the stationary path found in part~(a) gives a global minimum of the functional $S[y]$, since $S[y] \leq S[y+h]$ for \textbf{all} $h$.\par\noindent\rule{\textwidth}{0.4pt}
