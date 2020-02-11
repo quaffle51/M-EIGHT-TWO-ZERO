@@ -6,6 +6,7 @@ work3.7
 *.aux
 *.log
 *.pytxcode
+*.zip
 *.gz
 *.f
 *.py
